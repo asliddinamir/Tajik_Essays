@@ -34,10 +34,10 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 // Spacer to push the content to the bottom
-                Spacer(),
+                const Spacer(),
                 // App Icon and Name
                 const Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       // Column for icon and title
@@ -71,7 +71,7 @@ class CustomDrawer extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     ListTile(
                       leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
                       title: const Text(
@@ -87,7 +87,7 @@ class CustomDrawer extends StatelessWidget {
                         ));
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     ListTile(
                       leading: const Icon(Icons.contact_mail,
                           color: Color(0xFF1E88E5)),
@@ -117,7 +117,7 @@ class CustomDrawer extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pop(); // Close the drawer
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DonationPage(),
+                          builder: (context) => const DonationPage(),
                         ));
                       },
                     ),

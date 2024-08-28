@@ -34,6 +34,7 @@ class EssaysListScreen extends StatefulWidget {
   const EssaysListScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EssaysListScreenState createState() => _EssaysListScreenState();
 }
 

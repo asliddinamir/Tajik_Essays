@@ -8,7 +8,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF1E88E5), // Blue background color
+        backgroundColor: const Color(0xFF1E88E5), // Blue background color
         title: const Text(
           'Тамос',
           style: TextStyle(
@@ -17,7 +17,7 @@ class ContactPage extends StatelessWidget {
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop(); // Go back to the previous screen
           },
@@ -61,13 +61,13 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 46),
+            SizedBox(height: 46),
             // WhatsApp Contact
             Row(
               children: [
                 Icon(FontAwesomeIcons.whatsapp, color: Colors.green),
-                const SizedBox(width: 8),
-                const Text(
+                SizedBox(width: 8),
+                Text(
                   'WhatsApp: +60189808402',
                   style: TextStyle(
                     fontSize: 16,
@@ -76,13 +76,13 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 46),
+            SizedBox(height: 46),
             // Instagram Contact
             Row(
               children: [
                 Icon(FontAwesomeIcons.instagram, color: Colors.purple),
-                const SizedBox(width: 8),
-                const Text(
+                SizedBox(width: 8),
+                Text(
                   'Instagram: @itsasliddinamir',
                   style: TextStyle(
                     fontSize: 16,
@@ -96,8 +96,8 @@ class ContactPage extends StatelessWidget {
             Row(
               children: [
                 Icon(FontAwesomeIcons.telegram, color: Colors.blue),
-                const SizedBox(width: 8),
-                const Text(
+                SizedBox(width: 8),
+                Text(
                   'Telegram: @alijanets2024',
                   style: TextStyle(
                     fontSize: 16,
