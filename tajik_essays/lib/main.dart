@@ -5,12 +5,12 @@ import 'custom_drawer.dart'; // Import the custom drawer file
 import 'essays_data.dart'; // Import the essays data file
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Color.fromARGB(255, 181, 74, 39), // Status bar color
-      // statusBarIconBrightness: Brightness.light, // Status bar icon brightness
-      // statusBarBrightness: Brightness.light, // Status bar brightness (iOS)
+      statusBarColor: Color.fromARGB(255, 181, 115, 39), // Status bar color
+      statusBarIconBrightness: Brightness.light, // Status bar icon brightness
+      statusBarBrightness: Brightness.light, // Status bar brightness (iOS)
     ),
   );
 

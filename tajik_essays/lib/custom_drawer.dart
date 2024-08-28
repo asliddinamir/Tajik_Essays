@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'about_page.dart';
 import 'contact_page.dart';
-// import 'donation_page.dart';
+import 'donation_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final headerHeight = screenHeight * 0.25; // 25% of the screen height
+    // final screenHeight = MediaQuery.of(context).size.height;
+    // final headerHeight = screenHeight * 0.25; // 25% of the screen height
 
     return Drawer(
       child: Column(
@@ -18,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: const Color(0xFF1E88E5), // Blue background color
             padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-            height: headerHeight, // Responsive height
+            height: 220, // Responsive height
             child: Column(
               mainAxisAlignment:
                   MainAxisAlignment.spaceBetween, // Space between children
@@ -42,8 +42,7 @@ class CustomDrawer extends StatelessWidget {
                     children: [
                       // Column for icon and title
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment
-                            .start, // Align column to the start
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Icon(Icons.insert_drive_file,
                               color: Colors.white,
@@ -69,60 +68,61 @@ class CustomDrawer extends StatelessWidget {
           Expanded(
             child: Container(
               color: Colors.white, // White background color for the body
-              child: Column(
-                children: [
-                  // Menu Items
-                  SizedBox(height: 30),
-                  ListTile(
-                    leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
-                    title: const Text(
-                      'Оиди Барнома',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 30),
+                    ListTile(
+                      leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
+                      title: const Text(
+                        'Оиди Барнома',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).pop(); // Close the drawer
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const AboutPage(),
+                        ));
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context).pop(); // Close the drawer
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AboutPage(),
-                      ));
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  ListTile(
-                    leading: const Icon(Icons.contact_mail,
-                        color: Color(0xFF1E88E5)),
-                    title: const Text(
-                      'Тамос',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    SizedBox(height: 16),
+                    ListTile(
+                      leading: const Icon(Icons.contact_mail,
+                          color: Color(0xFF1E88E5)),
+                      title: const Text(
+                        'Тамос',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).pop(); // Close the drawer
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ContactPage(),
+                        ));
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context).pop(); // Close the drawer
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ContactPage(),
-                      ));
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  ListTile(
-                    leading:
-                        const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
-                    title: const Text(
-                      'Донатсия',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    const SizedBox(height: 16),
+                    ListTile(
+                      leading:
+                          const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
+                      title: const Text(
+                        'Донатсия',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).pop(); // Close the drawer
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DonationPage(),
+                        ));
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context).pop(); // Close the drawer
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //   builder: (context) => const DonationPage(),
-                      // ));
-                    },
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
