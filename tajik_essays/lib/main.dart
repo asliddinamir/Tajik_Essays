@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Import the required package
 import 'theme.dart';
 import 'custom_drawer.dart'; // Import the custom drawer file
-import 'essay_data.dart'; // Import the essays data file
+import 'essays_data.dart'; // Import the essays data file
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

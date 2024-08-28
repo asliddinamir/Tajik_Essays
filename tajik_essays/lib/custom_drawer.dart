@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -8,7 +10,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           // Drawer Header
           Container(
-            color: Color(0xFF1E88E5), // Blue background color
+            color: const Color(0xFF1E88E5), // Blue background color
             padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
             child: Column(
               children: [
