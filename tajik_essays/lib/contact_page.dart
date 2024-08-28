@@ -54,7 +54,7 @@ class ContactPage extends StatelessWidget {
                 Icon(Icons.email, color: Colors.blue),
                 SizedBox(width: 8),
                 Text(
-                  'Почтаи электронӣ: asliddinamir3@gmail.com',
+                  'Почтаи электронӣ: \nasliddinamir3@gmail.com',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black87,

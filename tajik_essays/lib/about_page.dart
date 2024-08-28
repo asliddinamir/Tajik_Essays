@@ -23,7 +23,7 @@ class AboutPage extends StatelessWidget {
           },
         ),
       ),
-      body: const Padding(
+      body: const SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
