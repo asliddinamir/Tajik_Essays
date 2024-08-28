@@ -53,7 +53,7 @@ class CustomDrawer extends StatelessWidget {
                             'Эссе ва Иншоҳо ба тоҷикӣ',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -72,7 +72,7 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   // Menu Items
-                  SizedBox(height: 46),
+                  SizedBox(height: 30),
                   ListTile(
                     leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
                     title: const Text(
@@ -88,7 +88,7 @@ class CustomDrawer extends StatelessWidget {
                       ));
                     },
                   ),
-                  SizedBox(height: 26),
+                  SizedBox(height: 16),
                   ListTile(
                     leading: const Icon(Icons.contact_mail,
                         color: Color(0xFF1E88E5)),
@@ -105,7 +105,7 @@ class CustomDrawer extends StatelessWidget {
                       ));
                     },
                   ),
-                  const SizedBox(height: 26),
+                  const SizedBox(height: 16),
                   ListTile(
                     leading:
                         const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
