@@ -8,6 +8,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF1E88E5), // Blue background color
+        centerTitle: true,
         title: const Text(
           'Оиди Барнома',
           style: TextStyle(

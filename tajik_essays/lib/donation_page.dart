@@ -7,7 +7,8 @@ class DonationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF1E88E5), // Blue background color
+        backgroundColor: Color(0xFF1E88E5), // Blue background color
+        centerTitle: true,
         title: const Text(
           'Донатсия',
           style: TextStyle(
@@ -58,6 +59,7 @@ class DonationPage extends StatelessWidget {
                     'Рақами корт: 4444 8888 1050 9624',
                     style: TextStyle(
                       fontSize: 16,
+                      fontWeight: FontWeight.bold, // Bold card number
                       color: Colors.black87,
                     ),
                   ),
@@ -75,6 +77,7 @@ class DonationPage extends StatelessWidget {
                     'Банк: Alif Bank',
                     style: TextStyle(
                       fontSize: 16,
+                      fontWeight: FontWeight.bold, // Bold bank name
                       color: Colors.black87,
                     ),
                   ),
