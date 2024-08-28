@@ -34,10 +34,10 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 // Spacer to push the content to the bottom
-                const Spacer(),
+                Spacer(),
                 // App Icon and Name
                 const Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       // Column for icon and title
@@ -65,54 +65,66 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          // Menu Items
-          SizedBox(height: 30),
-          ListTile(
-            leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
-            title: const Text(
-              'Оиди Барнома',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+          // Body with white background
+          Expanded(
+            child: Container(
+              color: Colors.white, // White background color for the body
+              child: Column(
+                children: [
+                  // Menu Items
+                  SizedBox(height: 46),
+                  ListTile(
+                    leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
+                    title: const Text(
+                      'Оиди Барнома',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop(); // Close the drawer
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AboutPage(),
+                      ));
+                    },
+                  ),
+                  SizedBox(height: 26),
+                  ListTile(
+                    leading: const Icon(Icons.contact_mail,
+                        color: Color(0xFF1E88E5)),
+                    title: const Text(
+                      'Тамос',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop(); // Close the drawer
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ContactPage(),
+                      ));
+                    },
+                  ),
+                  const SizedBox(height: 26),
+                  ListTile(
+                    leading:
+                        const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
+                    title: const Text(
+                      'Донатсия',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop(); // Close the drawer
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //   builder: (context) => const DonationPage(),
+                      // ));
+                    },
+                  ),
+                ],
               ),
             ),
-            onTap: () {
-              Navigator.of(context).pop(); // Close the drawer
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const AboutPage(),
-              ));
-            },
-          ),
-          SizedBox(height: 16),
-          ListTile(
-            leading: const Icon(Icons.contact_mail, color: Color(0xFF1E88E5)),
-            title: const Text(
-              'Тамос',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {
-              Navigator.of(context).pop(); // Close the drawer
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const ContactPage(),
-              ));
-            },
-          ),
-          const SizedBox(height: 16),
-          ListTile(
-            leading: const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
-            title: const Text(
-              'Донатсия',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {
-              Navigator.of(context).pop(); // Close the drawer
-              // Navigator.of(context).push(MaterialPageRoute(
-              //   builder: (context) => const DonationPage(),
-              // ));
-            },
           ),
         ],
       ),
