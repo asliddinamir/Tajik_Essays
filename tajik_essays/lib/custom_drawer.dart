@@ -8,6 +8,9 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final headerHeight = screenHeight * 0.25; // 25% of the screen height
+
     return Drawer(
       child: Column(
         children: [
@@ -15,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: const Color(0xFF1E88E5), // Blue background color
             padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-            height: 220.0, // Adjusted height for header
+            height: headerHeight, // Responsive height
             child: Column(
               mainAxisAlignment:
                   MainAxisAlignment.spaceBetween, // Space between children
@@ -30,24 +33,31 @@ class CustomDrawer extends StatelessWidget {
                     },
                   ),
                 ),
-                // Spacer to push the title to the bottom
-                Spacer(),
+                // Spacer to push the content to the bottom
+                const Spacer(),
                 // App Icon and Name
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
+                const Padding(
+                  padding: EdgeInsets.all(15.0),
                   child: Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.center, // Center the content
                     children: [
-                      Icon(Icons.insert_drive_file, color: Colors.white),
-                      SizedBox(width: 8),
-                      Text(
-                        'Эссе ва Иншоҳо ба тоҷикӣ',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      // Column for icon and title
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment
+                            .start, // Align column to the start
+                        children: [
+                          Icon(Icons.insert_drive_file,
+                              color: Colors.white,
+                              size: 48.0), // Adjust size as needed
+                          SizedBox(height: 8), // Space between icon and title
+                          Text(
+                            'Эссе ва Иншоҳо ба тоҷикӣ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -56,7 +66,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           // Menu Items
-          SizedBox(height: 46),
+          SizedBox(height: 30),
           ListTile(
             leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
             title: const Text(
@@ -72,7 +82,7 @@ class CustomDrawer extends StatelessWidget {
               ));
             },
           ),
-          SizedBox(height: 26),
+          SizedBox(height: 16),
           ListTile(
             leading: const Icon(Icons.contact_mail, color: Color(0xFF1E88E5)),
             title: const Text(
@@ -88,7 +98,7 @@ class CustomDrawer extends StatelessWidget {
               ));
             },
           ),
-          const SizedBox(height: 26),
+          const SizedBox(height: 16),
           ListTile(
             leading: const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
             title: const Text(
