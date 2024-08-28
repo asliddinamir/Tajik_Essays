@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'about_page.dart';
+import 'contact_page.dart';
+// import 'donation_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -12,7 +15,10 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: const Color(0xFF1E88E5), // Blue background color
             padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+            height: 220.0, // Adjusted height for header
             child: Column(
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceBetween, // Space between children
               children: [
                 // Close button at the top right
                 Align(
@@ -24,10 +30,14 @@ class CustomDrawer extends StatelessWidget {
                     },
                   ),
                 ),
+                // Spacer to push the title to the bottom
+                Spacer(),
                 // App Icon and Name
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // Center the content
                     children: [
                       Icon(Icons.insert_drive_file, color: Colors.white),
                       SizedBox(width: 8),
@@ -46,28 +56,52 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           // Menu Items
+          SizedBox(height: 46),
           ListTile(
             leading: const Icon(Icons.info, color: Color(0xFF1E88E5)),
-            title: const Text('Оиди Барнома'),
+            title: const Text(
+              'Оиди Барнома',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
-              // Handle navigation to About page
-              Navigator.of(context).pushNamed('/about');
+              Navigator.of(context).pop(); // Close the drawer
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const AboutPage(),
+              ));
             },
           ),
+          SizedBox(height: 26),
           ListTile(
             leading: const Icon(Icons.contact_mail, color: Color(0xFF1E88E5)),
-            title: const Text('Тамос'),
+            title: const Text(
+              'Тамос',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
-              // Handle navigation to Contact page
-              Navigator.of(context).pushNamed('/contact');
+              Navigator.of(context).pop(); // Close the drawer
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ContactPage(),
+              ));
             },
           ),
+          const SizedBox(height: 26),
           ListTile(
             leading: const Icon(Icons.favorite, color: Color(0xFF1E88E5)),
-            title: const Text('Донатсия'),
+            title: const Text(
+              'Донатсия',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
-              // Handle navigation to Donation page
-              Navigator.of(context).pushNamed('/donation');
+              Navigator.of(context).pop(); // Close the drawer
+              // Navigator.of(context).push(MaterialPageRoute(
+              //   builder: (context) => const DonationPage(),
+              // ));
             },
           ),
         ],

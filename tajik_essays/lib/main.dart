@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import the required package
+import 'package:flutter/services.dart';
 import 'theme.dart';
 import 'custom_drawer.dart'; // Import the custom drawer file
 import 'essays_data.dart'; // Import the essays data file
@@ -8,10 +8,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Color.fromARGB(
-          255, 39, 117, 181), // Set your desired status bar color
-      statusBarIconBrightness:
-          Brightness.light, // Set icon brightness to light (white)
+      statusBarColor: Color.fromARGB(255, 39, 117, 181),
+      statusBarIconBrightness: Brightness.light,
     ),
   );
 
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Essays in Tajik',
-      theme: appTheme, // Use the custom theme
+      theme: appTheme,
       home: const EssaysListScreen(),
     );
   }
@@ -69,8 +67,15 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60.0, // Adjust height as needed
-        title: const Text('Эссе ва Иншоҳо ба тоҷикӣ'),
+        toolbarHeight: 60.0,
+        title: const Text(
+          'Эссе ва Иншоҳо ба тоҷикӣ',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0, // Slightly smaller font size for the title
+          ),
+        ),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
@@ -88,10 +93,15 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Ҷустуҷӯи иншоҳо...',
+                hintStyle: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0, // Smaller font size for hint text
+                ),
                 fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide.none,
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
               ),
@@ -100,7 +110,7 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
           ),
         ),
       ),
-      drawer: CustomDrawer(), // Add the custom drawer here
+      drawer: const CustomDrawer(),
       body: SafeArea(
         child: Stack(
           children: [
@@ -112,7 +122,7 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                   margin: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 8.0),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 255, 255, 255),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(8.0),
                     boxShadow: [
                       BoxShadow(
@@ -182,9 +192,12 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                     curve: Curves.easeOut,
                   );
                 },
-                child: const Icon(Icons.arrow_upward),
                 backgroundColor: Colors.blue,
                 tooltip: 'To the Top',
+                child: const Icon(
+                  Icons.arrow_upward,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
@@ -223,18 +236,24 @@ class EssayDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 18.0,
+          ),
+        ),
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          // Add this widget to enable scrolling
           child: Text(
             content,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontSize: 18.0,
+                  fontSize: 17.0,
                 ),
           ),
         ),

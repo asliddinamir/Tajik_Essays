@@ -9,7 +9,13 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF1E88E5), // Blue background color
-        title: Text('Тамос'),
+        title: const Text(
+          'Тамос',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
@@ -18,12 +24,12 @@ class ContactPage extends StatelessWidget {
         ),
       ),
       body: const Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Header Text
-            const Text(
+            Text(
               'Барои маълумоти бештар ё пешниҳодҳо:',
               style: TextStyle(
                 fontSize: 20,
@@ -31,8 +37,8 @@ class ContactPage extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 8),
-            const Text(
+            SizedBox(height: 18),
+            Text(
               'Агар шумо саволҳо ё пешниҳодҳо дошта бошед, лутфан бо мо дар тамос шавед:',
               style: TextStyle(
                 fontSize: 16,
@@ -40,9 +46,9 @@ class ContactPage extends StatelessWidget {
                 height: 1.5,
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 46),
             // Email Contact
-            const Row(
+            Row(
               children: [
                 Icon(Icons.email, color: Colors.blue),
                 SizedBox(width: 8),
@@ -55,7 +61,7 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 46),
             // WhatsApp Contact
             Row(
               children: [
@@ -70,7 +76,7 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 46),
             // Instagram Contact
             Row(
               children: [
@@ -85,7 +91,7 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 46),
             // Telegram Contact
             Row(
               children: [
