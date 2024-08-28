@@ -96,7 +96,8 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
               decoration: InputDecoration(
                 hintText: 'Ҷустуҷӯи иншоҳо...',
                 hintStyle: const TextStyle(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 72, 66, 66),
+                  fontWeight: FontWeight.normal,
                   fontSize: 14.0, // Smaller font size for hint text
                 ),
                 fillColor: Colors.white,
