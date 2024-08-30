@@ -8,9 +8,6 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final screenHeight = MediaQuery.of(context).size.height;
-    // final headerHeight = screenHeight * 0.25; // 25% of the screen height
-
     return Drawer(
       child: Column(
         children: [
@@ -35,20 +32,27 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 // Spacer to push the content to the bottom
                 const Spacer(),
-                // App Icon and Name
-                const Padding(
-                  padding: EdgeInsets.all(15.0),
+                // App Logo and Name
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      // Column for icon and title
+                      // Column for logo and title
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(Icons.insert_drive_file,
-                              color: Colors.white,
-                              size: 48.0), // Adjust size as needed
-                          SizedBox(height: 8), // Space between icon and title
-                          Text(
+                          ClipOval(
+                            child: Image.asset(
+                              'assets/logo.png', // Path to your logo image
+                              width: 48.0, // Adjust width as needed
+                              height: 48.0, // Adjust height as needed
+                              fit: BoxFit
+                                  .cover, // Ensure the image covers the area
+                            ),
+                          ),
+                          const SizedBox(
+                              height: 8), // Space between logo and title
+                          const Text(
                             'Эссе ва Иншоҳо ба тоҷикӣ',
                             style: TextStyle(
                               color: Colors.white,

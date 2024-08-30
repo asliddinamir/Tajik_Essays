@@ -34,14 +34,12 @@ class EssaysListScreen extends StatefulWidget {
   const EssaysListScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _EssaysListScreenState createState() => _EssaysListScreenState();
 }
 
 class _EssaysListScreenState extends State<EssaysListScreen> {
   String searchQuery = '';
   final ScrollController _scrollController = ScrollController();
-
   late List<Map<String, String>> _filteredEssays;
 
   @override
@@ -75,7 +73,7 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 20.0, // Slightly smaller font size for the title
+            fontSize: 20.0,
           ),
         ),
         leading: Builder(
@@ -98,7 +96,7 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                 hintStyle: const TextStyle(
                   color: Colors.grey,
                   fontWeight: FontWeight.normal,
-                  fontSize: 14.0, // Smaller font size for hint text
+                  fontSize: 14.0,
                 ),
                 fillColor: Colors.white,
                 filled: true,
@@ -137,13 +135,17 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                     ],
                   ),
                   child: ListTile(
-                    contentPadding: const EdgeInsets.all(6.0),
-                    leading: Container(
-                      padding: const EdgeInsets.only(left: 12.0),
-                      child: const Icon(
-                        Icons.article,
-                        color: Colors.blue,
-                        size: 24.0,
+                    contentPadding: const EdgeInsets.all(8.0),
+                    leading: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/logo.png', // Your logo image path
+                          height: 30, // Smaller height for the logo
+                          width: 30, // Smaller width for the logo
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     title: RichText(
