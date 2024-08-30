@@ -135,44 +135,54 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                     ],
                   ),
                   child: ListTile(
-                    contentPadding: const EdgeInsets.all(8.0),
+                    contentPadding: const EdgeInsets.all(6.0),
                     leading: Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
                           'assets/logo.png', // Your logo image path
-                          height: 30, // Smaller height for the logo
-                          width: 30, // Smaller width for the logo
+                          height: 28, // Smaller height for the logo
+                          width: 28, // Smaller width for the logo
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    title: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: '${index + 1}. ',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(
-                                  color: const Color.fromARGB(255, 47, 46, 46),
-                                  fontSize: 16.0,
+                    title: Row(
+                      crossAxisAlignment:
+                          CrossAxisAlignment.center, // Center alignment
+                      children: [
+                        Expanded(
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '${index + 1}. ',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        color: const Color.fromARGB(
+                                            255, 47, 46, 46),
+                                        fontSize: 16.0,
+                                      ),
                                 ),
-                          ),
-                          TextSpan(
-                            text: _filteredEssays[index]['title']!,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(
-                                  color: const Color.fromARGB(255, 47, 46, 46),
-                                  fontSize: 16.0,
+                                TextSpan(
+                                  text: _filteredEssays[index]['title']!,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        color: const Color.fromARGB(
+                                            255, 47, 46, 46),
+                                        fontSize: 16.0,
+                                      ),
                                 ),
+                              ],
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     onTap: () {
                       Navigator.of(context).push(_createPageTransition(
