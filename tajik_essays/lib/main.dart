@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'theme.dart';
-import 'custom_drawer.dart'; // Import the custom drawer file
-import 'essays_data.dart'; // Import the essays data file
+import 'custom_drawer.dart';
+import 'essays_data.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Color.fromARGB(255, 181, 115, 39), // Status bar color
-      statusBarIconBrightness: Brightness.light, // Status bar icon brightness
-      statusBarBrightness: Brightness.light, // Status bar brightness (iOS)
+      statusBarColor: Color.fromARGB(255, 181, 115, 39),
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
     ),
   );
 
@@ -141,16 +141,15 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
-                          'assets/logo.png', // Your logo image path
-                          height: 28, // Smaller height for the logo
-                          width: 28, // Smaller width for the logo
+                          'assets/logo.png',
+                          height: 28,
+                          width: 28,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     title: Row(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.center, // Center alignment
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
                           child: RichText(
