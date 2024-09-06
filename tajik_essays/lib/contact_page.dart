@@ -99,7 +99,7 @@ class ContactPage extends StatelessWidget {
                 Icon(FontAwesomeIcons.telegram, color: Colors.blue),
                 SizedBox(width: 8),
                 Text(
-                  'Telegram: @alijanets2024',
+                  'Telegram: @asliddinamir',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black87,
