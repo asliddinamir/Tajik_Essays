@@ -32,94 +32,19 @@
 //   }
 // }
 
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'dart:io';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdHelper {
-  static BannerAd? _bannerAd;
-  // static bool _isBannerAdLoaded = false;
-  static InterstitialAd? _interstitialAd;
-  static RewardedAd? _rewardedAd;
-
-  // Banner Ad
-  static BannerAd? get bannerAd {
-    if (_bannerAd == null) {
-      _bannerAd = BannerAd(
-        adUnitId: Platform.isAndroid
-            ? 'ca-app-pub-3940256099942544/6300978111'
-            : 'ca-app-pub-3940256099942544/2934735716',
-        request: const AdRequest(),
-        size: AdSize.banner,
-        listener: BannerAdListener(
-          onAdLoaded: (ad) {
-            print('BannerAd loaded.');
-            _isBannerAdLoaded = true;
-          },
-          onAdFailedToLoad: (ad, err) {
-            print('BannerAd failed to load: $err');
-            ad.dispose();
-          },
-        ),
-      )..load();
-    }
-    return _bannerAd;
+  static String get bannerAdUnitId {
+    return Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/6300978111' // Replace with your banner ad unit ID
+        : 'ca-app-pub-3940256099942544/2934735716'; // Replace with your banner ad unit ID
   }
 
-  // Interstitial Ad
-  static void loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: Platform.isAndroid
-          ? 'ca-app-pub-3940256099942544/1033173712'
-          : 'ca-app-pub-3940256099942544/4411468910',
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) {
-          print('InterstitialAd loaded.');
-          _interstitialAd = ad;
-        },
-        onAdFailedToLoad: (error) {
-          print('InterstitialAd failed to load: $error');
-        },
-      ),
-    );
-  }
-
-  static void showInterstitialAd() {
-    if (_interstitialAd != null) {
-      _interstitialAd!.show();
-      _interstitialAd = null; // Dispose of the ad after showing
-    } else {
-      print('InterstitialAd is not loaded yet.');
-    }
-  }
-
-  // Rewarded Ad
-  static void loadRewardedAd() {
-    RewardedAd.load(
-      adUnitId: Platform.isAndroid
-          ? 'ca-app-pub-3940256099942544/5224354917'
-          : 'ca-app-pub-3940256099942544/1712485313',
-      request: const AdRequest(),
-      adLoadCallback: RewardedAdLoadCallback(
-        onAdLoaded: (ad) {
-          print('RewardedAd loaded.');
-          _rewardedAd = ad;
-        },
-        onAdFailedToLoad: (error) {
-          print('RewardedAd failed to load: $error');
-        },
-      ),
-    );
-  }
-
-  static void showRewardedAd() {
-    if (_rewardedAd != null) {
-      _rewardedAd!.show(onUserEarnedReward: (ad, reward) {
-        print('User earned reward: $reward');
-      });
-      _rewardedAd = null; // Dispose of the ad after showing
-    } else {
-      print('RewardedAd is not loaded yet.');
-    }
+  static String get interstitialAdUnitId {
+    return Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/1033173712' // Replace with your interstitial ad unit ID
+        : 'ca-app-pub-3940256099942544/4411468910'; // Replace with your interstitial ad unit ID
   }
 }
