@@ -150,21 +150,19 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
       ),
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
-          // Status bar color
           statusBarColor: Color.fromARGB(255, 36, 112, 174),
-
-          // Status bar brightness (optional)
           statusBarIconBrightness: Brightness.light, // For Android (dark icons)
           // statusBarBrightness: Brightness.dark, // For iOS (dark icons)
         ),
         toolbarHeight: 60.0,
+        centerTitle: true,
         backgroundColor: Colors.blue,
         title: const Text(
           'Эссе ва Иншоҳо ба тоҷикӣ',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 20.0,
+            fontSize: 18.0,
           ),
         ),
         leading: Builder(
@@ -225,10 +223,10 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                           style: TextStyle(fontSize: 14))),
                 ),
           const SizedBox(
-            height: 3,
+            height: 2,
           ),
           const SizedBox(
-            height: 10,
+            height: 0,
           ),
           Expanded(
             child: ListView.builder(
@@ -247,7 +245,7 @@ class _EssaysListScreenState extends State<EssaysListScreen> {
                   // Return the regular essay list item
                   return Container(
                     margin: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 8.0),
+                        vertical: 3.0, horizontal: 8.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8.0),
