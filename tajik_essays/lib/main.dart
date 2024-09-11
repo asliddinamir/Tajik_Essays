@@ -12,14 +12,6 @@ import 'package:get/get.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setSystemUIOverlayStyle(
-  //   const SystemUiOverlayStyle(
-  //     statusBarColor: Colors.red,
-  //     //Color.fromARGB(255, 181, 115, 39),
-  //     statusBarIconBrightness: Brightness.light,
-  //     statusBarBrightness: Brightness.light,
-  //   ),
-  // );
   MobileAds.instance.initialize();
 
   runApp(const MyApp());
@@ -39,8 +31,6 @@ class _MyAppState extends State<MyApp> {
       if (mounted) {}
       AdHelper.interstitialBackButtonImageAds();
     });
-
-    // TODO: implement initState
     super.initState();
   }
 
@@ -50,10 +40,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Essays in Tajik',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home:
-          //HomePage(),
-
-          EssaysListScreen(),
+      home: const EssaysListScreen(),
     );
   }
 }
@@ -62,6 +49,7 @@ class EssaysListScreen extends StatefulWidget {
   const EssaysListScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EssaysListScreenState createState() => _EssaysListScreenState();
 }
 
@@ -376,12 +364,6 @@ class EssayDetailScreen extends StatefulWidget {
 class _EssayDetailScreenState extends State<EssayDetailScreen> {
   @override
   void initState() {
-    // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    //   statusBarColor: Colors.red, // Replace with your desired color
-    //   statusBarIconBrightness:
-    //       Brightness.light, // Adjust based on your color choice
-    // ));
-    // TODO: implement initState
     Future.delayed(Duration.zero).then((v) {
       if (AdHelper.backButtonImageInterstitialAd == null) {
         AdHelper.interstitialBackButtonImageAds();
@@ -441,6 +423,8 @@ class _EssayDetailScreenState extends State<EssayDetailScreen> {
 }
 
 class AddNativeAd extends StatefulWidget {
+  const AddNativeAd({super.key});
+
   @override
   AddNativeAdState createState() => AddNativeAdState();
 }

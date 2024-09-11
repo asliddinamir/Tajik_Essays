@@ -29,9 +29,13 @@ class AdHelper {
   }
 
   static String get nativeAdUnitId {
-    return Platform.isAndroid
-        ? "ca-app-pub-3940256099942544/2247696110" // Replace with your interstitial ad unit ID
-        : "ca-app-pub-3940256099942544/2247696110"; // Replace with your interstitial ad unit ID
+    if (Platform.isAndroid) {
+      return "ca-app-pub-3940256099942544/2247696110";
+    } else if (Platform.isIOS) {
+      return "ca-app-pub-3940256099942544/2247696110";
+    } else {
+      throw UnsupportedError("Unsupported platform");
+    }
   }
 
   static InterstitialAd? backButtonImageInterstitialAd;
