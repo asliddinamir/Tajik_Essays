@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="tajik_essays"
         android:name="${applicationName}"
@@ -30,10 +33,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <!-- <meta-data
+        <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544/9257395921"/>  -->
-            <!--Test code -->
+            android:value="ca-app-pub-3040413046352040~3728764190"/>
+             <!--Test code -->
+<!--            android:value="ca-app-pub-3940256099942544/9257395921"/> &lt;!&ndash;Test code &ndash;&gt;-->
 
     </application>
     <!-- Required to query activities that can process text, see:
