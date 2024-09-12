@@ -428,36 +428,38 @@ class AddNativeAd extends StatefulWidget {
 }
 
 class AddNativeAdState extends State<AddNativeAd> {
-  //ad setup
-
   NativeAd? nativeAd;
   bool isAdLoaded = false;
+
   @override
   void initState() {
-    nativeAd = NativeAd(
-        adUnitId: "ca-app-pub-3940256099942544/2247696110",
-        //AdHelper.nativeAdUnitId,
-        listener: NativeAdListener(
-          onAdLoaded: (ad) {
-            setState(() {
-              isAdLoaded = true;
-            });
-
-            log("Ad Loaded");
-          },
-          onAdFailedToLoad: (ad, error) {
-            log("Error == 123= ${error.toString()}");
-            ad.dispose();
-            setState(() {
-              isAdLoaded = false;
-            });
-          },
-        ),
-        request: const AdRequest(),
-        nativeTemplateStyle:
-            NativeTemplateStyle(templateType: TemplateType.small));
-    nativeAd!.load();
     super.initState();
+    _loadNativeAd();
+  }
+
+  void _loadNativeAd() {
+    nativeAd = NativeAd(
+      adUnitId: AdHelper.nativeAdUnitId,
+      listener: NativeAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            isAdLoaded = true;
+          });
+          log("Native Ad Loaded");
+        },
+        onAdFailedToLoad: (ad, error) {
+          log("Native Ad Failed to Load: ${error.message}");
+          ad.dispose();
+          setState(() {
+            isAdLoaded = false;
+          });
+        },
+      ),
+      request: const AdRequest(),
+      nativeTemplateStyle:
+          NativeTemplateStyle(templateType: TemplateType.small),
+    );
+    nativeAd!.load();
   }
 
   @override
@@ -467,7 +469,6 @@ class AddNativeAdState extends State<AddNativeAd> {
   }
 
   @override
-  //the card takes will either take editable form or view form
   Widget build(BuildContext context) {
     return isAdLoaded
         ? Container(
@@ -476,7 +477,7 @@ class AddNativeAdState extends State<AddNativeAd> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                width: MediaQuery.sizeOf(context).width,
+                width: MediaQuery.of(context).size.width,
                 height: 90,
                 child: AdWidget(ad: nativeAd!),
               ),
