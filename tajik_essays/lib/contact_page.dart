@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // For using FontAwesome icons
+import 'package:flutter/material.dart'; // For using FontAwesome icons
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -55,51 +54,6 @@ class ContactPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Почтаи электронӣ: \nasliddinamir3@gmail.com',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 46),
-            // WhatsApp Contact
-            Row(
-              children: [
-                Icon(FontAwesomeIcons.whatsapp, color: Colors.green),
-                SizedBox(width: 8),
-                Text(
-                  'WhatsApp: +60189808402',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 46),
-            // Instagram Contact
-            Row(
-              children: [
-                Icon(FontAwesomeIcons.instagram, color: Colors.purple),
-                SizedBox(width: 8),
-                Text(
-                  'Instagram: @itsasliddinamir',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 46),
-            // Telegram Contact
-            Row(
-              children: [
-                Icon(FontAwesomeIcons.telegram, color: Colors.blue),
-                SizedBox(width: 8),
-                Text(
-                  'Telegram: @asliddinamir',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black87,
